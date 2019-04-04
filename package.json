@@ -1,0 +1,30 @@
+{
+  "name": "react-builder",
+  "version": "1.0.0",
+  "description": "A falsework for React. (This version is for pc Browser).",
+  "main": "index.js",
+  "dependencies": {
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BlueStoneQ/react-builder.git"
+  },
+  "keywords": [
+    "wepack",
+    "React",
+    "falsework",
+    "build"
+  ],
+  "author": "qiaoyang <qiaoyang@bonc.com.cn>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BlueStoneQ/react-builder/issues"
+  },
+  "homepage": "https://github.com/BlueStoneQ/react-builder#readme"
+}
