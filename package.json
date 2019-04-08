@@ -7,9 +7,14 @@
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "webpack-dev-server": "^3.2.1",
+    "webpack-merge": "^4.2.1"
+  },
   "scripts": {
-    "test": "webpack --config webpack.config.js"
+    "start": "webpack-dev-server --hot --color --config ./build/webpack.dev.config.js",
+    "build": "webpack --config ./build/webpack.prod.config.js",
+    "test": "test"
   },
   "repository": {
     "type": "git",
