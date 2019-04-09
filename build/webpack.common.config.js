@@ -17,10 +17,10 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.(css|less)$/,
         include: path.resolve(SRC_PATH, 'style'),
         exclude: path.resolve(ROOT_PATH, 'node_modules'),
-        use: [ 'style-loader', 'css-loader' ]
+        use: [ 'style-loader', 'css-loader', 'less-loader' ]
       }
     ]
   }
