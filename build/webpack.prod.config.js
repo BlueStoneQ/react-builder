@@ -14,7 +14,7 @@ module.exports = merge(common, {
   plugins: [
     // https://github.com/jantimon/html-webpack-plugin#configuration
     new HtmlWebpackPlugin({ // 打包生成html文件，并动态地引入打包后的bundle.[hash].js文件
-      // favicon: '', // 这里可以添加favicon
+      // favicon: '',
       filename: 'index.html', // 在dist/（这个路径由webpack的output指定）中最终生成的html文件的名称，默认为index.html
        // html的来源（source,模板文件）,默认为'src/index.ejs'， 其实html也可以作为源文件(但是html作为template文件，就无法使用tittle这样的模板设置)
       template: path.resolve(SRC_PATH, 'index.html'), 

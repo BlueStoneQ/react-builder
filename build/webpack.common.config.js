@@ -13,5 +13,15 @@ module.exports = {
   output: {
     path: BUILD_PATH,
     filename: '[name].[hash:8].bundle.js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        include: path.resolve(SRC_PATH, 'style'),
+        exclude: path.resolve(ROOT_PATH, 'node_modules'),
+        use: [ 'style-loader', 'css-loader' ]
+      }
+    ]
   }
 };
