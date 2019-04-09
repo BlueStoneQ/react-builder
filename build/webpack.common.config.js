@@ -2,6 +2,7 @@
  * webpack中dev和prod两种模式公用的配置
  */
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = require('./config');
 
@@ -14,5 +15,10 @@ module.exports = {
   output: {
     path: BUILD_PATH,
     filename: '[name].[hash:8].bundle.js'
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      
+    })
+  ]
 };
