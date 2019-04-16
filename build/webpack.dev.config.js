@@ -11,6 +11,10 @@ const SRC_PATH = config.SRC_PATH;
 
 module.exports = merge(common, {
   mode: 'development', // 模式 - 开发模式
+  devServer: {
+    compress: true,
+    port: 3000
+  },
   plugins: [
     // https://github.com/jantimon/html-webpack-plugin#configuration
     new HtmlWebpackPlugin({
