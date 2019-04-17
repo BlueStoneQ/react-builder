@@ -3,6 +3,7 @@
  */
 const path = require('path');
 const config = require('./config');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const ROOT_PATH = config.ROOT_PATH;
 const SRC_PATH = config.SRC_PATH;
@@ -20,8 +21,19 @@ module.exports = {
         test: /\.(css|less)$/,
         include: path.resolve(SRC_PATH, 'style'),
         exclude: path.resolve(ROOT_PATH, 'node_modules'),
-        use: [ 'style-loader', 'css-loader', 'less-loader' ]
+        use: [ {
+          loader: MiniCssExtractPlugin.loader,
+
+        }, 'css-loader', 'less-loader' ]
       }
     ]
-  }
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+    }),
+  ]
 };
