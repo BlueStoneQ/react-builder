@@ -9,6 +9,8 @@ const ROOT_PATH = config.ROOT_PATH;
 const SRC_PATH = config.SRC_PATH;
 const BUILD_PATH = config.BUILD_PATH;
 
+console.log('process.env.NODE_ENV: ', process.env.NODE_ENV)
+
 module.exports = {
   entry: path.resolve(SRC_PATH, 'index.js'),
   output: {
@@ -23,7 +25,12 @@ module.exports = {
         exclude: path.resolve(ROOT_PATH, 'node_modules'),
         use: [ {
           loader: MiniCssExtractPlugin.loader,
-
+          options: {
+            // you can specify a publicPath here
+            // by default it uses publicPath in webpackOptions.output
+            publicPath: '../',
+            hmr: process.env.NODE_ENV === 'development', // 根据当前运行环境 决定是否启用样式的热启动
+          },
         }, 'css-loader', 'less-loader' ]
       }
     ]

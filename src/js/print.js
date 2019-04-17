@@ -5,7 +5,7 @@ import '../style/less/test.less';
 
 function printMe() {
   console.log('pintMe')
-  return '<div>1cduwhcw123adadecd89</div>'
+  return '<span>1cduwhcw123adadecd89</span>'
 } 
 
 export default printMe
