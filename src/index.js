@@ -1,5 +1,11 @@
-// 这是js注释
-// 只有在js中引入的css文件才会被解析插入,最后被插入到bundle.js中，并把bundle.js插入页面中
-import './style/test.css';
-import './style/less/test.less';
-console.log('welcome to use webpack!!');
+import printMe from './js/print';
+
+document.getElementById('root').innerHTML = printMe();
+
+if (module.hot) {
+  // module.hot.accept('./js/print', () => {
+  //  console.log('Accepting the updated printMe module!');
+  //    printMe();
+  // })
+  module.hot.accept()
+}
