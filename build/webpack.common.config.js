@@ -20,9 +20,14 @@ module.exports = {
   },
   module: {
     rules: [
+      { 
+        test: /\.js$/,
+        include: path.resolve(SRC_PATH),
+        exclude: path.resolve(ROOT_PATH, 'node_modules'),
+      },
       {
         test: /\.(css|less)$/,
-        include: path.resolve(SRC_PATH, 'style'),
+        include: path.resolve(SRC_PATH),
         exclude: path.resolve(ROOT_PATH, 'node_modules'),
         use: [ {
           loader: MiniCssExtractPlugin.loader,
