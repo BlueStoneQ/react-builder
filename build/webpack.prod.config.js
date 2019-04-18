@@ -4,6 +4,7 @@
 const path = require('path');
 const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const common = require('./webpack.common.config');
 const config = require('./config');
 
@@ -30,6 +31,7 @@ module.exports = merge(common, {
         removeAttributeQuotes: true, // 删除引号（删除不需要引号的值）- 有待测试
         removeCommentsFromCDATA: true // 从脚本和样式中删除注释
       }
-    })
+    }),
+    new OptimizeCssAssetsPlugin()
   ]
 });
