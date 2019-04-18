@@ -4,6 +4,7 @@
 const path = require('path');
 const config = require('./config');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const ROOT_PATH = config.ROOT_PATH;
 const SRC_PATH = config.SRC_PATH;
@@ -41,6 +42,7 @@ module.exports = {
       // both options are optional
       filename: '[name].css',
       chunkFilename: '[id].css',
-    })
+    }),
+    new CleanWebpackPlugin()
   ]
 };
