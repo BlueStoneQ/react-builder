@@ -1,6 +1,11 @@
 import printMe from './js/print';
+import HEART_IMG from '../assets/images/heart.jpg';
 
-document.getElementById('root').innerHTML = printMe();
+const rootDOM = document.getElementById('root')
+rootDOM.innerHTML = printMe();
+let heartImg = new Image();
+heartImg.src = HEART_IMG;
+rootDOM.appendChild(heartImg);
 
 if (module.hot) {
   // module.hot.accept('./js/print', () => {

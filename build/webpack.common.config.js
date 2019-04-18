@@ -38,6 +38,16 @@ module.exports = {
             hmr: process.env.NODE_ENV === 'development', // 根据当前运行环境 决定是否启用样式的热启动
           },
         }, 'css-loader', 'postcss-loader', 'less-loader' ]
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        include: path.resolve(ROOT_PATH, 'assets'),
+        exclude: path.resolve(ROOT_PATH, 'node_modules'),
+        use: [
+          {
+            loader: 'file-loader',
+          }
+        ]
       }
     ]
   },
