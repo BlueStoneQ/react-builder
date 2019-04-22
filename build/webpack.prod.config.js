@@ -12,6 +12,7 @@ const SRC_PATH = config.SRC_PATH;
 
 module.exports = merge(common, {
   mode: 'production', // 模式 - 产品模式
+  devtool: 'source-map',
   plugins: [
     // https://github.com/jantimon/html-webpack-plugin#configuration
     new HtmlWebpackPlugin({ // 打包生成html文件，并动态地引入打包后的bundle.[hash].js文件
