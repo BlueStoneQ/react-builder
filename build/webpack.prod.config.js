@@ -2,6 +2,7 @@
  * webpack配置 - devalopment模式
  */
 const path = require('path');
+const webpack = require('webpack');
 const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
@@ -13,7 +14,7 @@ const SRC_PATH = config.SRC_PATH;
 module.exports = merge(common, {
   mode: 'production', // 模式 - 产品模式
   devtool: 'source-map',
-  watch: true, // 开启文件监控
+  watch: true, // 开启文件监控-实时打包开启
   watchOptions: {
     aggregateTimeout: 500,
     poll: 1000,
@@ -39,6 +40,8 @@ module.exports = merge(common, {
         removeCommentsFromCDATA: true // 从脚本和样式中删除注释
       }
     }),
-    new OptimizeCssAssetsPlugin()
+    new OptimizeCssAssetsPlugin(),
+      // https://www.webpackjs.com/plugins/banner-plugin/
+    new webpack.BannerPlugin('Maked by qy in 2019')
   ]
 });
