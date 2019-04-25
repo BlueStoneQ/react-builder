@@ -42,6 +42,9 @@ module.exports = merge(common, {
     }),
     new OptimizeCssAssetsPlugin(),
       // https://www.webpackjs.com/plugins/banner-plugin/
-    new webpack.BannerPlugin('Maked by qy in 2019')
+    new webpack.BannerPlugin('Maked by qy in 2019'),
+    new webpack.DefinePlugin({
+      IS_PROD: JSON.stringify(true),
+    }),
   ]
 });

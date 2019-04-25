@@ -18,11 +18,6 @@ module.exports = {
     path: BUILD_PATH,
     filename: '[name].[hash:8].bundle.js'
   },
-  resolve: {
-    modules: ['node_modules'],
-    // alias: {},  // 待项目目录结构设计好后再设置
-    extensions: ['js', 'jsx', 'json', 'less', 'css']
-  },
   module: {
     rules: [
       { 

@@ -5,7 +5,11 @@ import '../style/less/test.less';
 
 function printMe() {
   console.log('pintMe')
-  return '<span>123412356712312381239</span>'
+  if (IS_PROD) {
+    return '<span>生产环境</span>'
+  } else {
+    return '<span>开发环境</span>'
+  }
 } 
 
 export default printMe
