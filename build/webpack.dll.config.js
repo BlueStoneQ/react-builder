@@ -21,7 +21,7 @@ module.exports = {
     new webpack.DllPlugin({
       context: __dirname,
       name: '_dll_[name]',
-      path: path.resolve(ROOT_PATH, 'dist', 'manifest.json') // 生成manifest的路径和文件名
+      path: path.resolve(ROOT_PATH, 'dist', 'less.manifest.json') // 生成manifest的路径和文件名
     })
   ]
 }

@@ -5,6 +5,7 @@
 const path = require('path');
 
 module.exports = {
+  PORT: 3002,
   ROOT_PATH: path.resolve(__dirname, '../'),
   SRC_PATH: path.resolve(__dirname, '../', 'src'),
   BUILD_PATH: path.resolve(__dirname, '../', 'dist')
