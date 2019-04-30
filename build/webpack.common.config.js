@@ -22,22 +22,24 @@ module.exports = {
     rules: [
       { 
         test: /\.(js|jsx)$/,
-        include: path.resolve(SRC_PATH),
         exclude: path.resolve(ROOT_PATH, 'node_modules'),
+        use: [ 'babel-loader', 'eslint-loader' ]
       },
       {
         test: /\.(css|less)$/,
         include: path.resolve(SRC_PATH),
         exclude: path.resolve(ROOT_PATH, 'node_modules'),
-        use: [ {
-          loader: MiniCssExtractPlugin.loader,
-          options: {
-            // you can specify a publicPath here
-            // by default it uses publicPath in webpackOptions.output
-            publicPath: '../',
-            hmr: process.env.NODE_ENV === 'development', // 根据当前运行环境 决定是否启用样式的热启动
-          },
-        }, 'css-loader', 'postcss-loader', 'less-loader' ]
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              // you can specify a publicPath here
+              // by default it uses publicPath in webpackOptions.output
+              publicPath: '../',
+              hmr: process.env.NODE_ENV === 'development', // 根据当前运行环境 决定是否启用样式的热启动
+            },
+          }, 'css-loader', 'postcss-loader', 'less-loader'
+        ]
       },
       {
         test: /\.(png|jpg|gif)$/,
