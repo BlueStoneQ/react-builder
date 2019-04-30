@@ -1,5 +1,5 @@
-import printMe from './js/print';
-import HEART_IMG from '../assets/images/heart.jpg';
+import printMe from './views/test/print';
+import HEART_IMG from '../public/assets/images/heart.jpg';
 
 const rootDOM = document.getElementById('root')
 rootDOM.innerHTML = printMe();

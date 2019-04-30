@@ -21,7 +21,7 @@ module.exports = {
   module: {
     rules: [
       { 
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         include: path.resolve(SRC_PATH),
         exclude: path.resolve(ROOT_PATH, 'node_modules'),
       },
@@ -41,8 +41,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif)$/,
-        include: path.resolve(ROOT_PATH, 'assets')
-        ,
+        include: path.resolve(ROOT_PATH, 'public', 'assets'),
         exclude: path.resolve(ROOT_PATH, 'node_modules'),
         use: [
           {
