@@ -9,7 +9,7 @@ var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const common = require('./webpack.common.config');
 const config = require('./config');
 
-const SRC_PATH = config.SRC_PATH;
+const ROOT_PATH = config.ROOT_PATH;
 
 module.exports = merge(common, {
   mode: 'production', // 模式 - 产品模式
@@ -26,7 +26,7 @@ module.exports = merge(common, {
       // favicon: '',
       filename: 'index.html', // 在dist/（这个路径由webpack的output指定）中最终生成的html文件的名称，默认为index.html
        // html的来源（source,模板文件）,默认为'src/index.ejs'， 其实html也可以作为源文件(但是html作为template文件，就无法使用tittle这样的模板设置)
-      template: path.resolve(SRC_PATH, 'index.html'), 
+      template: path.resolve(ROOT_PATH, 'public','index.html'), 
       // 其实在mode=production的情况下，以下minify的选项会默认开启
       hash: true, // 对引入的script/css文件打上hash戳，
       minify: { // 优化：压缩实际用的是html-minifiler https://github.com/kangax/html-minifier
