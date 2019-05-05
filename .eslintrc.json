@@ -5,6 +5,8 @@
         "es6": true
     },
     "extends": [
+      "standard",
+      "standard-react",
       "eslint:recommended",
       "plugin:react/recommended"
     ],
@@ -17,7 +19,8 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "babel"
     ],
     "rules": {
         "indent": [
