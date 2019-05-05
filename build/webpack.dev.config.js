@@ -16,6 +16,10 @@ module.exports = merge(common, {
   devtool: 'eval-source-map',
   devServer: {
     open: true, // 服务起动后自动打开浏览器
+    overlay: {
+      warnings: true,
+      errors: true
+    }, // 报错到浏览器屏幕
     compress: true,
     port: PORT,
     contentBase: './dist'
