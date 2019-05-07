@@ -7,7 +7,7 @@ function Home() {
 }
 
 function About() {
-  return <h2>About123</h2>;
+  return <h2>Abou12t1233</h2>;
 }
 
 function Header() {
@@ -17,7 +17,7 @@ function Header() {
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="/about">About1123</Link>
+        <Link to="/about">About123</Link>
       </li>
     </ul>
   );

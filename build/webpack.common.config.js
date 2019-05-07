@@ -14,8 +14,7 @@ console.log('process.env.NODE_ENV: ', process.env.NODE_ENV)
 
 module.exports = {
   entry: [
-    path.resolve(SRC_PATH, 'index.js'),
-    'webpack-hot-middleware/client'
+    path.resolve(SRC_PATH, 'index.js')
   ],
   output: {
     path: BUILD_PATH,

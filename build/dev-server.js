@@ -9,7 +9,10 @@ const webpackDevMiddleware = require("webpack-dev-middleware");
 const webpackHotMiddleware = require("webpack-hot-middleware");
 const open = require('open');
 
-const webpackConfig = require('./webpack.dev.config');
+let webpackConfig = require('./webpack.dev.config');
+
+// HMR
+webpackConfig.entry.push('webpack-hot-middleware/client');
 
 const compiler = webpack(webpackConfig);
 
