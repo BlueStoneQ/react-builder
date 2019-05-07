@@ -55,8 +55,7 @@
     "webpack-merge": "^4.2.1"
   },
   "scripts": {
-    "dev": "cross-env NODE_ENV=development node ./build/dev-server.js",
-    "start": "cross-env NODE_ENV=development webpack-dev-server --hot --color --config ./build/webpack.dev.config.js",
+    "start": "cross-env NODE_ENV=development node ./build/dev-server.js",
     "build": "cross-env NODE_ENV=production webpack --config ./build/webpack.prod.config.js",
     "build:dll": "webpack --config ./build/webpack.dll.config.js",
     "test": "test"

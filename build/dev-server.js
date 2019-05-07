@@ -40,7 +40,10 @@ app.use(devMiddleware);
 app.use(hotMiddleware);
 
 // 设置访问静态文件的路径   http://www.expressjs.com.cn/starter/static-files.html
-app.use('/static', express.static(PUBLIC_DIR))
+app.use('/static', express.static(PUBLIC_DIR));
+
+// 启动gzip压缩
+app.use(require('compression')());
  
 module.exports = app.listen(PORT);
 
