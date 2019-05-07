@@ -29,6 +29,7 @@ const hotMiddleware = WebpackHotMiddleware(compiler, {
 });
 
 const PORT = config.PORT;
+const PUBLIC_DIR = config.PUBLIC_DIR;
 const URL = `http://localhost:${PORT}`;
 const ipURL = `http://${ip.address()}:${PORT}`;
 
@@ -38,8 +39,8 @@ app.use(devMiddleware);
 
 app.use(hotMiddleware);
 
-// 设置访问静态文件的路径
-// app.use(express.static(DIST_DIR));
+// 设置访问静态文件的路径   http://www.expressjs.com.cn/starter/static-files.html
+app.use('/static', express.static(PUBLIC_DIR))
  
 module.exports = app.listen(PORT);
 
