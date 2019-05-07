@@ -13,7 +13,10 @@ const BUILD_PATH = config.BUILD_PATH;
 console.log('process.env.NODE_ENV: ', process.env.NODE_ENV)
 
 module.exports = {
-  entry: path.resolve(SRC_PATH, 'index.js'),
+  entry: [
+    path.resolve(SRC_PATH, 'index.js'),
+    'webpack-hot-middleware/client'
+  ],
   output: {
     path: BUILD_PATH,
     filename: '[name].[hash:8].bundle.js'

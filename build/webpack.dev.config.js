@@ -9,21 +9,21 @@ const common = require('./webpack.common.config');
 const config = require('./config');
 
 const ROOT_PATH = config.ROOT_PATH;
-const PORT = config.PORT;
+// const PORT = config.PORT;
 
 module.exports = merge(common, {
   mode: 'development', // 模式 - 开发模式
   devtool: 'eval-source-map',
-  devServer: {
-    open: true, // 服务起动后自动打开浏览器
-    overlay: {
-      warnings: true,
-      errors: true
-    }, // 报错到浏览器屏幕
-    compress: true,
-    port: PORT,
-    contentBase: './dist'
-  },
+  // devServer: {
+  //   open: true, // 服务起动后自动打开浏览器
+  //   overlay: {
+  //     warnings: true,
+  //     errors: true
+  //   }, // 报错到浏览器屏幕
+  //   compress: true,
+  //   port: PORT,
+  //   contentBase: './dist'
+  // },
   plugins: [
     // https://github.com/jantimon/html-webpack-plugin#configuration
     new HtmlWebpackPlugin({
@@ -34,5 +34,10 @@ module.exports = merge(common, {
     new webpack.DefinePlugin({
       IS_PROD: JSON.stringify(false),
     }),
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    // HMR https://webpack.docschina.org/plugins/hot-module-replacement-plugin/
+    new webpack.HotModuleReplacementPlugin(),
+    // https://www.webpackjs.com/plugins/no-emit-on-errors-plugin/
+    new webpack.NoEmitOnErrorsPlugin()
   ]
 });

@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader/root';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 function Home() {
   return <h2>Home</h2>;
 }
 
 function About() {
-  return <h2>About</h2>;
+  return <h2>About123</h2>;
 }
 
 function Header() {
@@ -17,7 +17,7 @@ function Header() {
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="/about">About</Link>
+        <Link to="/about">About1123</Link>
       </li>
     </ul>
   );

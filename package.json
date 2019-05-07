@@ -4,6 +4,7 @@
   "description": "A falsework for React. (This version is for pc Browser).",
   "main": "index.js",
   "dependencies": {
+    "express": "^4.16.4",
     "less": "^3.9.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -40,14 +41,18 @@
     "html-webpack-plugin": "^3.2.0",
     "less-loader": "^4.1.0",
     "mini-css-extract-plugin": "^0.6.0",
+    "open": "^6.2.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-loader": "^3.0.0",
     "style-loader": "^0.23.1",
     "url-loader": "^1.1.2",
+    "webpack-dev-middleware": "^3.6.2",
     "webpack-dev-server": "^3.2.1",
+    "webpack-hot-middleware": "^2.24.4",
     "webpack-merge": "^4.2.1"
   },
   "scripts": {
+    "dev": "cross-env NODE_ENV=development node ./build/dev-server.js",
     "start": "cross-env NODE_ENV=development webpack-dev-server --hot --color --config ./build/webpack.dev.config.js",
     "build": "cross-env NODE_ENV=production webpack --config ./build/webpack.prod.config.js",
     "build:dll": "webpack --config ./build/webpack.dll.config.js",
