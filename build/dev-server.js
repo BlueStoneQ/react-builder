@@ -9,6 +9,7 @@ const WebpackDevMiddleware = require("webpack-dev-middleware");
 const WebpackHotMiddleware = require("webpack-hot-middleware");
 const open = require('open');
 const chalk = require('chalk');
+const ip = require('ip');
 
 let webpackConfig = require('./webpack.dev.config');
 
@@ -29,6 +30,7 @@ const hotMiddleware = WebpackHotMiddleware(compiler, {
 
 const PORT = config.PORT;
 const URL = `http://localhost:${PORT}`;
+const ipURL = `http://${ip.address()}:${PORT}`;
 
 const app = express();
  
@@ -44,7 +46,8 @@ module.exports = app.listen(PORT);
 // 编译完成后回调 https://github.com/webpack/webpack-dev-middleware#waituntilvalidcallback
 devMiddleware.waitUntilValid(function() {
   // 打包成功后作出提示
-  console.log(chalk.cyan(`- Local: ${URL}`))
+  console.log(chalk.cyan(`- Local: ${URL}`));
+  console.log(chalk.cyan(`- On Your NetWork: ${ipURL}`))
   // 打开默认浏览器
   open(URL);
 })
