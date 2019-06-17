@@ -10,8 +10,6 @@ const ROOT_PATH = config.ROOT_PATH;
 const SRC_PATH = config.SRC_PATH;
 const BUILD_PATH = config.BUILD_PATH;
 
-console.log('process.env.NODE_ENV: ', process.env.NODE_ENV)
-
 module.exports = {
   entry: [
     path.resolve(SRC_PATH, 'index.js')

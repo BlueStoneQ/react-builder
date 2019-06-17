@@ -30,7 +30,7 @@ module.exports = merge(common, {
       // 其实在mode=production的情况下，以下minify的选项会默认开启
       hash: true, // 对引入的script/css文件打上hash戳，
       minify: { // 优化：压缩实际用的是html-minifiler https://github.com/kangax/html-minifier
-        collapseWhitespace: false, // 删除空格（不会删除SCRIPT、style和textarea中的空格）
+        collapseWhitespace: true, // 删除空格（不会删除SCRIPT、style和textarea中的空格）
         removeComments: true, // 打包后去除html中的注释等（保留<style>和<script>中的数据）
         removeRedundantAttributes: true, // 删除多余的属性
         removeScriptTypeAttributes: true, // 删除<script>中的type类型，H5下的script默认type为：text/javascript
