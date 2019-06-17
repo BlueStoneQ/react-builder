@@ -19,6 +19,15 @@ module.exports = {
     filename: '[name].[hash:8].bundle.js'
   },
   resolve: {
+    alias: {
+      public: path.resolve(ROOT_PATH, 'public'),
+      src: path.resolve(SRC_PATH),
+      views: path.resolve(SRC_PATH, 'views'),
+      components: path.resolve(SRC_PATH, 'components'),
+      config: path.resolve(SRC_PATH, 'config'),
+      utils: path.resolve(SRC_PATH, 'utils'),
+      redux: path.resolve(SRC_PATH, 'redux')
+    },
     extensions: [ '.js', '.jsx', '.json' ]
   },
   module: {
@@ -45,7 +54,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|jpg|gif)$/,
+        test: /\.(png|jpg|gif|svg)$/,
         include: path.resolve(ROOT_PATH, 'public', 'assets'),
         exclude: path.resolve(ROOT_PATH, 'node_modules'),
         use: [
