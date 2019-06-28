@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader/root';
+import List from './list-app';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 function Home() {
@@ -19,6 +20,9 @@ function Header() {
       <li>
         <Link to="/about">About123</Link>
       </li>
+      <li>
+        <Link to="/app/list">list</Link>
+      </li>
     </ul>
   );
 }
@@ -31,6 +35,7 @@ class App extends Component {
           <Header />
           <Route exact path='/' component={Home} />
           <Route path='/about' component={About} />
+          <Route path='/app/list' component={List} />
         </div>
       </Router>
     );

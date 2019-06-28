@@ -50,7 +50,12 @@ module.exports = {
               publicPath: '../',
               hmr: process.env.NODE_ENV === 'development', // 根据当前运行环境 决定是否启用样式的热启动
             },
-          }, 'css-loader', 'postcss-loader', 'less-loader'
+          }, {
+            loader: 'css-loader',
+            options: {
+              modules: true // 开启css-module
+            }
+          }, 'postcss-loader', 'less-loader'
         ]
       },
       {
