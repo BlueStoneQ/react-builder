@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { hot } from 'react-hot-loader/root';
 import List from './list-app';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { apiManager } from '../mock';
+
+apiManager();
 
 function Home() {
   return <h2>Home</h2>;

@@ -26,7 +26,8 @@ module.exports = {
       components: path.resolve(SRC_PATH, 'components'),
       config: path.resolve(SRC_PATH, 'config'),
       utils: path.resolve(SRC_PATH, 'utils'),
-      redux: path.resolve(SRC_PATH, 'redux')
+      redux: path.resolve(SRC_PATH, 'redux'),
+      mock: path.resolve(SRC_PATH, 'mock')
     },
     extensions: [ '.js', '.jsx', '.json' ]
   },
