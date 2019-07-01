@@ -1,9 +1,7 @@
-const Mock = require('mockjs');
+// const Mock = require('mockjs');
 
 export default function () {
-  let data = Mock.mock({
-    'list|4-10': 'zxy'
-  });
-  
-  console.log('data: ', data);
+  // let data = Mock.mock({
+  //   'list|4-10': 'zxy'
+  // });
 }
