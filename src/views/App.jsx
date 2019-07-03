@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader/root';
-import List from './list-app';
+import List from './demo';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 function Home() {

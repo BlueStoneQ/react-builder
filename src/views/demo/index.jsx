@@ -3,7 +3,7 @@
  */
 import React, { Component } from 'react';
 import { Item } from './Item';
-import { axios } from 'utils';
+import { demoService } from 'services/demo';
 import style from './ListApp.less';
 
 class ListApp extends Component {
@@ -15,7 +15,7 @@ class ListApp extends Component {
   }
   componentDidMount() {
     // 请求下数据
-    axios.get('/api/test').then((res) => {
+    demoService().then((res) => {
       this.setState({
         dataList: res.data
       });
