@@ -1,1 +1,1 @@
-export { default as apiManager } from './apiManager';
+import './example';
