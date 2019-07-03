@@ -6,10 +6,17 @@ import { Item } from './Item';
 import style from './ListApp.less';
 
 class ListApp extends Component {
-  render () {
+  constructor(props) {
+    super(props);
+    this.state = {
+      dataList: []
+    };
+  }
+  render() {
+    const { dataList } = this.state;
     return (
       <ul className={style.listWrap}>
-        {[1, 2, 3, 4, 5].map((v, i) => (
+        {dataList.map((v, i) => (
           <Item key={v+i}>{v}</Item>
         ))}
       </ul>
