@@ -2,9 +2,7 @@ import axios from 'axios';
 import config from 'config';
 
 // mock拦截器在开发模式下打开
-// process.env.NODE_ENV === 'development' && !!config.MOCK_ABLE && require('../mock');
-
-require('../mock');
+process.env.NODE_ENV === 'development' && !!config.MOCK_ABLE && require('../mock');
 
 // axios基础配置
 Object.assign(axios.defaults, {
