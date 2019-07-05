@@ -3,7 +3,7 @@
  */
 import React, { Component } from 'react';
 import { Item } from './Item';
-import { demoService } from 'services/demo';
+import { demoService } from '$services/demo1';
 import style from './ListApp.less';
 
 class ListApp extends Component {

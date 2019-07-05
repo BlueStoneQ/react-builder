@@ -1,4 +1,4 @@
-import { axios } from 'utils';
+import { axios } from '$utils';
 
 export function demoService() {
   return axios.get('/api/demo');

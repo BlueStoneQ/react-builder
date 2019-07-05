@@ -1,8 +1,17 @@
 import axios from 'axios';
-import config from 'config';
+import config from '$config';
 
 // mock拦截器在开发模式下打开
-process.env.NODE_ENV === 'development' && !!config.MOCK_ABLE && require('../mock');
+process.env.NODE_ENV === 'development' && !!config.MOCK_ABLE && require('$mock');
+
+/**
+ * 热刷新下，当，mock中url变化时 - 重载mock，否则修改url后会引起invalid url
+ */
+if (module.hot) {
+  module.hot.accept('../mock', () => {
+    process.env.NODE_ENV === 'development' && !!config.MOCK_ABLE && require('$mock');
+  });
+}
 
 // axios基础配置
 Object.assign(axios.defaults, {
