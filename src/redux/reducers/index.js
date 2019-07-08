@@ -1,10 +1,8 @@
 import { combineReducers } from 'redux';
-import todos from './demo-todo-list/todo';
-import visibilityFilter from './demo-todo-list/visibilityFilter';
+import demoTodoList from './demo-todo-list';
 
 const store = combineReducers({
-  todos,
-  visibilityFilter
+  ...demoTodoList
 });
 
 export default store;
