@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader/root';
-import List from '$views/demo1';
+import mockDeom from '$views/mock-demo';
 import DemoTodoList from './demo-todo-list';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
@@ -22,7 +22,7 @@ function Header() {
         <Link to="/about">About123</Link>
       </li>
       <li>
-        <Link to="/app/demo1">demo1</Link>
+        <Link to="/app/demo1">mock-demo</Link>
       </li>
       <li>
         <Link to="/app/demo-todo-list">demo-todo-list</Link>
@@ -39,7 +39,7 @@ class App extends Component {
           <Header />
           <Route exact path='/' component={Home} />
           <Route path='/about' component={About} />
-          <Route path='/app/demo1' component={List} />
+          <Route path='/app/demo1' component={mockDeom} />
           <Route path='/app/demo-todo-list' component={DemoTodoList} />
         </div>
       </Router>
