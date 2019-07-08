@@ -20,15 +20,15 @@ module.exports = {
   },
   resolve: {
     alias: {
-      public: path.resolve(ROOT_PATH, 'public'),
-      src: path.resolve(SRC_PATH),
-      views: path.resolve(SRC_PATH, 'views'),
-      components: path.resolve(SRC_PATH, 'components'),
-      config: path.resolve(SRC_PATH, 'config'),
-      utils: path.resolve(SRC_PATH, 'utils'),
-      redux: path.resolve(SRC_PATH, 'redux'),
-      mock: path.resolve(SRC_PATH, 'mock'),
-      services: path.resolve(SRC_PATH, 'services')
+      '$public': path.resolve(ROOT_PATH, 'public'),
+      '$src': path.resolve(SRC_PATH),
+      '$views': path.resolve(SRC_PATH, 'views'),
+      '$components': path.resolve(SRC_PATH, 'components'),
+      '$config': path.resolve(SRC_PATH, 'config'),
+      '$utils': path.resolve(SRC_PATH, 'utils'),
+      '$redux': path.resolve(SRC_PATH, 'redux'),
+      '$mock': path.resolve(SRC_PATH, 'mock'),
+      '$services': path.resolve(SRC_PATH, 'services')
     },
     extensions: [ '.js', '.jsx', '.json' ]
   },
