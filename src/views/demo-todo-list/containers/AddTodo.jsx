@@ -18,7 +18,7 @@ let AddTodo = ({ dispatch }) => {
             return;
           }
           dispatch(addTodo(input.value));
-          input.value = '';
+          input.value = ''; // 清空input，这里用了非受控组件
         }}
       >
         <input
