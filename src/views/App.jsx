@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { hot } from 'react-hot-loader/root';
 import mockDeom from '$views/mock-demo';
 import DemoTodoList from './demo-todo-list';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 function Home() {
   return <h2>Home</h2>;
@@ -35,13 +35,13 @@ class App extends Component {
   render () {
     return (
       <Router>
-        <div>
-          <Header />
+        <Header />
+        <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/about' component={About} />
           <Route path='/app/demo1' component={mockDeom} />
           <Route path='/app/demo-todo-list' component={DemoTodoList} />
-        </div>
+        </Switch>
       </Router>
     );
   }
