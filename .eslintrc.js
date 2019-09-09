@@ -1,4 +1,4 @@
-{
+module.exports = {
     "env": {
         "browser": true,
         "commonjs": true,
@@ -19,8 +19,8 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react",
-        "babel"
+      "react",
+      "babel"
     ],
     "rules": {
         "indent": [
@@ -38,6 +38,7 @@
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "no-console": process.env.NODE_ENV === "production" ? "error" : "warn"
     }
-}
+};

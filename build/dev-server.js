@@ -1,7 +1,6 @@
 /**
  * webpack - 本地开发服务器
  */
-const path = require("path");
 const express = require("express");
 const webpack = require("webpack");
 const config = require('./config');

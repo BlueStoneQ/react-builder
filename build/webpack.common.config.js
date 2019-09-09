@@ -19,6 +19,17 @@ module.exports = {
     filename: '[name].[hash:8].bundle.js'
   },
   resolve: {
+    alias: {
+      '$public': path.resolve(ROOT_PATH, 'public'),
+      '$src': path.resolve(SRC_PATH),
+      '$views': path.resolve(SRC_PATH, 'views'),
+      '$components': path.resolve(SRC_PATH, 'components'),
+      '$config': path.resolve(SRC_PATH, 'config'),
+      '$utils': path.resolve(SRC_PATH, 'utils'),
+      '$redux': path.resolve(SRC_PATH, 'redux'),
+      '$mock': path.resolve(SRC_PATH, 'mock'),
+      '$services': path.resolve(SRC_PATH, 'services')
+    },
     extensions: [ '.js', '.jsx', '.json' ]
   },
   module: {
@@ -41,11 +52,16 @@ module.exports = {
               publicPath: '../',
               hmr: process.env.NODE_ENV === 'development', // 根据当前运行环境 决定是否启用样式的热启动
             },
-          }, 'css-loader', 'postcss-loader', 'less-loader'
+          }, {
+            loader: 'css-loader',
+            options: {
+              modules: true // 开启css-module
+            }
+          }, 'postcss-loader', 'less-loader'
         ]
       },
       {
-        test: /\.(png|jpg|gif)$/,
+        test: /\.(png|jpg|gif|svg)$/,
         include: path.resolve(ROOT_PATH, 'public', 'assets'),
         exclude: path.resolve(ROOT_PATH, 'node_modules'),
         use: [
