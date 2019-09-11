@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader/root';
 import mockDeom from '$views/mock-demo';
-import DemoTodoList from './demo-todo-list';
+import DemoTodoList from '$views/demo-todo-list';
 import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 function Home() {

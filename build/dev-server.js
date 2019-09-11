@@ -12,7 +12,7 @@ const ip = require('ip');
 
 let webpackConfig = require('./webpack.dev.config');
 
-// HMR
+// HMR - 增加到entry
 webpackConfig.entry.push('webpack-hot-middleware/client');
 
 const compiler = webpack(webpackConfig);
