@@ -50,7 +50,7 @@ module.exports = app.listen(PORT);
 devMiddleware.waitUntilValid(function() {
   // 打包成功后作出提示
   console.log(chalk.cyan(`- Local: ${URL}`));
-  console.log(chalk.cyan(`- On Your NetWork: ${ipURL}`))
+  console.log(chalk.cyan(`- On Your NetWork: ${ipURL}`));
   // 打开默认浏览器
   open(URL);
 })
