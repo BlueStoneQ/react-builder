@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import demoTodoList from './demo-todo-list';
 
-const store = combineReducers({
+const reducer = combineReducers({
   ...demoTodoList
 });
 
-export default store;
+export default reducer;
