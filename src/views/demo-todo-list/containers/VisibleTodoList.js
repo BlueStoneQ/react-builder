@@ -3,6 +3,11 @@ import { toggleTodo } from '$redux/actions/demo-todo-list';
 import TodoList from '../components/TodoList';
 import { SHOW_ALL, SHOW_COMPELETED, SHOW_ACTIVE } from '../constants';
 
+/**
+ * 让两个state值共同参与计算
+ * @param {*} todos 
+ * @param {*} filter 
+ */
 const getVisibleTodos = (todos, filter) => {
   switch (filter) {
   case SHOW_COMPELETED:
